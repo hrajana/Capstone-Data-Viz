@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggplot2)\nlibrary(plotly)\n \npl <- ggplot(mtcars, aes(mpg,wt)) + geom_point()\n\ngpl <- ggplotly(pl)\n\nprint(gpl)\n\n",
+    "created" : 1497205325364.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3258656153",
+    "id" : "1D6F7225",
+    "lastKnownWriteTime" : 1497212989,
+    "last_content_update" : 1497212989649,
+    "path" : "~/Desktop/R-Course-HTML-Notes/R-for-Data-Science-and-Machine-Learning/Training Exercises/Capstone and Data Viz Projects/Data Visualization Project/Untitled.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

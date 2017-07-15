@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggplot2)\nlibrary(data.table)\n#fread function is how you read this csv file in, and the drop takes off the first column\nfile <- fread('Economist_Assignment_Data.csv', drop = 1)\n#read into a data frame df\ndf <- data.frame(file)\n(head(df))\n#Make a scatterplot of the data using the CPI and the HDI\np <- ggplot(df, aes(x = CPI, y = HDI))\npl <- p + geom_point(aes(color = Region), shape = 1, size = 3)\npl2 <- pl + geom_smooth(aes(group=1), method = 'lm', formula = y ~ log(x), se = FALSE, color = 'red')\npointsToLabel <- c(\"Russia\", \"Venezuela\", \"Iraq\", \"Myanmar\", \"Sudan\",\n                     \"Afghanistan\", \"Congo\", \"Greece\", \"Argentina\", \"Brazil\",\n                     \"India\", \"Italy\", \"China\", \"South Africa\", \"Spane\",\n                     \"Botswana\", \"Cape Verde\", \"Bhutan\", \"Rwanda\", \"France\",\n                     \"United States\", \"Germany\", \"Britain\", \"Barbados\", \"Norway\", \"Japan\",\n                     \"New Zealand\", \"Singapore\")\npl3 <- pl2 + geom_text(aes(label = Country), color = 'gray20', data = subset(df, Country %in% pointsToLabel), check_overlap = TRUE)\npl4 <- pl3 + theme_bw()\npl4 <- pl4 + scale_x_continuous(name = 'Corruption Perceptions Index, 2011 (10 = least corrupt)', breaks = (1:10), limits = c(0,10)) \npl5 <- pl4 + scale_y_continuous(name = 'Human Development Index, 2011 (1 = best)', breaks = c(0.2, 0.4, 0.6, 0.8,1), limits = c(0,1))\npl5 <- pl5 + ggtitle('Corruption and Human Development')\nprint(pl5)",
+    "created" : 1497136527121.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3774618349",
+    "id" : "12D853C6",
+    "lastKnownWriteTime" : 1497202715,
+    "last_content_update" : 1497202715114,
+    "path" : "~/Desktop/R-Course-HTML-Notes/R-for-Data-Science-and-Machine-Learning/Training Exercises/Capstone and Data Viz Projects/Data Visualization Project/Data Visualization Project.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}
